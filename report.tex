@@ -1,0 +1,172 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+\usepackage{helvet} % Default font is the helvetica postscript font
+%\usepackage{newcent} % To change the default font to the new century schoolbook postscript font uncomment this line and comment the one above
+
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{tabu}
+\usepackage{palatino}
+\usepackage{tabularx}
+\graphicspath{ {} }
+\usepackage{listings}
+
+\usepackage{color}
+\definecolor{mygrey}{gray}{.95}
+\textheight=9.75in
+\raggedbottom
+
+\setlength{\tabcolsep}{0in}
+\newcommand{\isep}{-2 pt}
+\newcommand{\lsep}{-0.5cm}
+\newcommand{\psep}{-0.6cm}
+\renewcommand{\labelitemii}{$\circ$}
+
+\pagestyle{empty}
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\small \colorbox{mygrey}{\begin{minipage}{0.975\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[3]{
+\begin{tabular*}{6.62in}{l @{\extracolsep{\fill}} r}
+	\textsc{{\textbf{#1}}} & \textsc{\textit{[#2]}} \\
+\end{tabular*}\vspace{-8pt}}
+
+% moderncv themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.90]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Image}{Processing}
+%\title{Resumé title}                               % optional, remove / comment the line if not wanted
+%\address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+%\phone[mobile]{+1~(91)~978~169~8982}                   % optional, remove / comment the line if not wanted
+%\phone[fixed]{+2~(345)~678~901}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+%\email{2016csb1058@iitrpr.ac.in}                               % optional, remove / comment the line if not wanted
+%\homepage{https://github.com/Sameer-Arora}                     % optional, remove / comment the line if not wanted
+\extrainfo{INDIAN INSTITUTE OF TECHNOLOGY}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+ % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\resheading{\textbf{{\fontfamily{qpl}\selectfont HOW TO RUN}} }\\[\lsep]
+\vspace{4pt}
+%\begin{table}[ht!] 
+%\begin{center}
+
+\tabulinesep=.7mm
+\indent
+
+1) There are some small bugs in giving the inputs because by mistake I have uploaded the older file .So please copy the following changes:-
+At line 1048 :- 
+\begin{lstlisting}
+cin>>path>>x1>>y1>>x2>>y2>>x3>>y3>>x4>>y4>>x1_>>y1_>>x2_>>y2_>>x3_>>y3_>>x4_>>y4_;
+just copy the following in place of cin>>path>>x>>y;
+\end{lstlisting}
+At line 922 :-
+\begin{lstlisting}
+ float sx,sy;
+ cin>>path>>sx>>sy>>opt;
+ just copy the following in place of 	
+ int sx,sy;
+ cin>>path>>sx>>sy;
+\end{lstlisting}		
+
+\begin{tabu}{ *1{X[-2,l,m] }}
+\\
+
+2) To complie type:-   g++ 1.cpp  `pkg-config --cflags opencv --libs opencv \\
+3) ./a.out  \\
+4) Then choose the various options that are clearly specified in command promts.\\
+  \hline
+\end{tabu}
+
+\vspace{8pt}
+%\end{center}
+%\end{table}
+ \resheading{\textbf{{\fontfamily{qpl}\selectfont OBSERVATIONS }} }\\ [\lsep]\vspace{6pt}
+
+\begin{itemize}
+\item \noindent I observed in case of the \textbf{nearest nieghbour} the 0.5 is rounded to 1 whereas i have rounded off it to 2 as discussed in class so there was some bit of error due to it and for \textbf{bilinear interpolation} the images was observed to be different from the borders as I have used zero border padding and i have displayed the  rmse errors for them. 
+\item \noindent I observed that in case of \textbf{rotate,shear,translate} the image gets cropped wheras i have resizes the window to display the complete image.
+\item \noindent For histogram equlaization also the errors are computed and there almost no error is observed.
+\item \noindent For comparison between the opencv and my images i have used following opencv functions:-
+\item \textbf{ resize $( src_image,dst_image,dsize,scale_y,scale_x,INTER_NEAREST )$ } for resing the image.
+\item \textbf{equalizeHist $( src_image, dst_image)$ }  for equalizing the image.
+\item \textbf{ warpAffine$(src_image, dst_image, trans_mat, dst_image.size() )$ } - for equalizing the image.
+
+\end{itemize}
+
+\vspace{8pt}
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\resheading{\textbf{{\fontfamily{qpl}\selectfont ASSUMPTIONS } }}\\[\lsep]
+\vspace{8pt}
+
+\indent \begin{tabu}{ *1{X[-1,l,m] }}
+\tabitem  The affine transformation can be applied by using the functions again and again. \\ 
+\tabitem 
+For tie points its assumed that the tie pionts are given correctly. \\
+\tabitem For adaptive histogram equalization I have implemented both sliding window and tile adaptive histogram equalization and i have used the reflective padding for the image out of bounds.  \\
+\tabitem For the tie points i have used a rough estimate of the original image size suach that image is not cropped at all. \\
+\end{tabu}
+
+\vspace{6pt}
+
+ \resheading{\textbf{{\fontfamily{qpl}\selectfont REFERENCE}} }\\[\lsep]
+
+\vspace{6pt}
+\begin{itemize}
+\item \noindent The assignment is done indiviusually by myself, with help of class notes , opencv documentation and adaptive histogram from Wikipedia. 
+\end{itemize}
+
+%\resheading{\textbf{{\fontfamily{qpl}\selectfont EXTRACIRICULAR ACTIVITIES}} }\\[\lsep]
+%\begin{itemize}
+
+%\item \noindent I stood \textbf{second} in the national level British Parliamentry Debate(team level) held at P.C.T.E,Ludhiana .
+%\item \noindent I am coding club coordinator.
+
+%\end{itemize}
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.

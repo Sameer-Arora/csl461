@@ -1,0 +1,47 @@
+
+1)select course_id from course where dept_name="Comp. Sci." && credits=3;
+
+
+2)select distinct i.name ,s.name  from (( instructor as i inner join teachers as t on t.ID=i.ID) inner join ( student as s inner join  takes as tk on s.ID=tk.ID) on tk.course_id=t.course_id) where i.name='Einstein';
+
+
+3)select distinct s.name,tk.course_id  from (course as c inner join ( student as s inner join  takes as tk on s.ID=tk.ID) on tk.course_id=c.course_id) where c.dept_name='Comp. Sci.';
+
+4)SELECT MAX(salary) FROM instructor ; 
+
+5)UPDATE instructor SET  salary=salary+0.1*salary  WHERE dept_name='Comp. Sci.';
+
+6)select s.name,s.ID from student as s where s.ID not in ( select t.ID from takes as t  where t.year>2009 OR (t.year=2009 AND t.semester='Summer' OR t.semester='Spring')) ;
+
+7)INSERT INTO course(course_id,title,credits) VALUES ('CS-001','Weekly Seminar',0);
+
+8) INSERT INTO section(course_id,year,semester,sec_id) VALUES ('CS-001',2009,'Fall',1);
+
+9)insert into takes(ID,course_id,sec_id,semester,year) select s.ID,'CS-001','1','Fall',2009 from student as s where s.dept_name='Comp. Sci.';
+
+10)delete takes from takes inner join student as s on s.ID=takes.ID where ( takes.course_id='CS-001' AND s.name='Chavez');
+
+11)delete from course where course_id='CS-001';
+
+
+Additional Queries:-
+
+1)SELECT * FROM instructor WHERE salary=(SELECT MAX(salary) from instructor);
+
+2)SELECT DISTINCT s.name from takes as t INNER JOIN student as s on s.ID=t.ID where t.semester='Fall' AND t.year=2009;
+
+3,4)
+SELECT course_id,COUNT(course_id) AS `value_occurrence` FROM takes GROUP BY course_id  ORDER BY `value_occurrence` DESC  LIMIT    1;
+
+5)CREATE TABLE grade_points ( grade varchar(2) not null,point float not null);
+INSERT INTO grade_points VALUES ('A',4);  
+INSERT INTO grade_points VALUES ('A-',3.7);  
+INSERT INTO grade_points VALUES ('B+',3.3);  
+INSERT INTO grade_points VALUES ('B',3);  
+INSERT INTO grade_points VALUES ('C+',3.7);  
+INSERT INTO grade_points VALUES ('C',3.3);  
+INSERT INTO grade_points VALUES ('D+',3);  
+INSERT INTO grade_points VALUES ('D',2.7);  
+INSERT INTO grade_points VALUES ('E+',2.3);  
+INSERT INTO grade_points VALUES ('E',2);  
+INSERT INTO grade_points VALUES ('F',0);  
